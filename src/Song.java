@@ -7,7 +7,7 @@
 public class Song {
 
     // private attributes (see the UML diagram in README.md)
-
+    
 
     // constructor: set title, artist, and lengthSeconds from the parameters, and plays to 0
     public Song(String title, String artist, int lengthSeconds) {
@@ -19,17 +19,7 @@ public class Song {
         return "";    // replace this line
     }
 
-    public String getArtist() {
-        return "";    // replace this line
-    }
-
-    public int getLengthSeconds() {
-        return 0;     // replace this line
-    }
-
-    public int getPlays() {
-        return 0;     // replace this line
-    }
+    
 
     // setter
     public void setTitle(String title) {

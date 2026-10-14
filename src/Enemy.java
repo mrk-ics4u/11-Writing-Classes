@@ -8,19 +8,19 @@
  */
 public class Enemy {
 
-    // attributes (instance variables): private, so only code in this class can touch them
+    // 1. attributes - always private
     private String name;
     private int health;
     private int damage;
 
-    // constructor: same name as the class, no return type, sets every attribute
+    // 2. constructor
     public Enemy(String name, int health, int damage) {
-        this.name = name;          // this.name is the attribute, name is the parameter
+        this.name = name;
         this.health = health;
         this.damage = damage;
     }
-
-    // getters: return a copy of an attribute's value
+   
+    // 3. Methods - getters for each attribute
     public String getName() {
         return name;
     }
@@ -33,7 +33,7 @@ public class Enemy {
         return damage;
     }
 
-    // setters: replace an attribute's value
+    // do you always want a setter?  Programmer's choice!
     public void setName(String name) {
         this.name = name;
     }
@@ -42,13 +42,9 @@ public class Enemy {
         this.damage = damage;
     }
 
-    // no setHealth: health only changes through takeDamage
-
-    // other methods: behaviours that use the attributes
-    public int attack() {
-        return damage;
-    }
-
+    // rather than setDamage(), we can have a method that
+    // calculates the damage for us
+    // this is NOT a setter, because it doesn't set an attribute directly
     public void takeDamage(int amount) {
         health = health - amount;
         if (health < 0) {
@@ -56,7 +52,12 @@ public class Enemy {
         }
     }
 
+    public int attack() {
+        return damage;
+    }
+
     public boolean isDefeated() {
         return health == 0;
     }
+
 }
